@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CustomerComponent } from './customers/customer.component';
+import { CustomerComponent } from './clientes/customer.component';
 
 @NgModule({
   declarations: [
