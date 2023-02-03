@@ -43,8 +43,8 @@ export class CustomerComponent implements OnInit {
   }
 
   private validationMessages = {
-    required: 'Please enter your email address.',
-    email: 'Please enter a valid email address.'
+    required: 'por favor ingrese su email',
+    email: 'por favor ingrese su correo electronico'
   };
 
   constructor(private fb: FormBuilder) { }
@@ -59,8 +59,7 @@ export class CustomerComponent implements OnInit {
       }, { validator: emailMatcher }),
       phone: '',
       notification: 'email',
-      rating: [null, ratingRange(1, 5)],
-      sendCatalog: true,
+     
       addresses: this.fb.array([this.buildAddress()])
     });
 
@@ -93,17 +92,17 @@ export class CustomerComponent implements OnInit {
 
   populateTestData(): void {
     this.customerForm.patchValue({
-      firstName: 'Jack',
-      lastName: 'Harkness',
-      emailGroup: { email: 'jack@torchwood.com', confirmEmail: 'jack@torchwood.com' }
+      firstName: 'juan',
+      lastName: 'perez',
+      emailGroup: { email: 'juan@mail.com', confirmEmail: 'juan@email.com' }
     });
     const addressGroup = this.fb.group({
       addressType: 'work',
-      street1: 'Mermaid Quay',
+      street1: 'calle republica',
       street2: '',
-      city: 'Cardiff Bay',
-      state: 'CA',
-      zip: ''
+      city: 'ciudad de cordoba',
+      state: 'CBA',
+      zip: '123'
     });
     this.customerForm.setControl('addresses', this.fb.array([addressGroup]));
   }
